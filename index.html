@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Grundlegende Informationen -->
+        <meta charset="utf-8" />
+        <title>User24</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- JavaScript -->
+        <script src="script.js"></script>
+
+        <!-- Klasse Router einbinden -->
+        <script src="router.js"></script>
+
+        <!-- Google Font "Playfair Display" -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="main-page-header">
+                <a href="#/">Startseite</a>
+            </div>
+            <div>user24.de</div>
+        </header>
+        <!-- ========== -->
+        <!-- Startseite -->
+        <!-- ========== -->
+        <main id="start-page" class="">
+            <div class="search-label">User finden</div>
+            <div class="search-form">
+                <form method="get" title="leere Suche = alle User">
+                    <input type="search" name="q" placeholder="Name, Ort, ...">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <div class="search-information">
+                Hier können Sie nach Usern suchen.<br>
+                Geben Sie dazu einfach ihre Informationen in die Suche ein.
+            </div>
+        </main>
+        <!-- ============== -->
+        <!-- Suchergebnisse -->
+        <!-- =============== -->
+        <main id="search-results" class="hidden">
+            <div id="userContainer" class=""></div>
+        </main>
+        <!-- ========== -->
+        <!-- Userdetail -->
+        <!-- ========== -->
+        <main id="user-detail" class="hidden">
+            <button href="#/">Zurück zur Startseite</button>
+            <div id="userDetail"></div>
+            <div class="posts-title">Posts dieses Users</div>
+            <div class="user-posts-container"></div>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <div title="Impressum für eine Prüfungsaufgabe hoffentlich nicht nötig">Impressum</div>
+            <div title="Copyright nur zur Dekoration">© Tim Hubschneider</div>
+        </footer>
+    </body>
+</html>

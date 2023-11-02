@@ -1,0 +1,131 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+    font-family: 'Playfair Display', sans-serif;
+}
+
+body {
+    display: flex; 
+    flex-direction: column; 
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1em;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 3px 5px -2px rgba(0,0,0, 0.2);
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+}
+
+header .main-page-header:hover {
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(15px, 2.5vw, 22px);
+    flex-direction: column;
+}
+
+main > div {
+    padding: 0.5em 3em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-label, .posts-title {
+    font-size: 30px;
+}
+
+form input[type="search"] {
+    width: min(60vw, 500px);
+    height: 40px;
+    padding: 2px 10px 2px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: white;
+    vertical-align: middle;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+}
+
+button {
+    height: 40px;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+button:hover {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 40px;
+    font-size: large;
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none;
+}
+
+#userContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+    border: 3px solid #cccccc;
+    border-radius: 20%;
+}
+
+.user img {
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 20%;
+}
+
+.user span {
+    font-size: clamp(22px, 2.5vw, 30px);
+    margin: 5px 5px;
+}
+
+.user-posts-container {
+    flex-direction: column;
+}
+
+.postTitle {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.postBody {
+    margin-bottom: 5px;
+    text-align: justify;
+}
