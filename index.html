@@ -6,13 +6,13 @@
         <title>User24</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Stylesheet -->
+        <!-- Stylesheets -->
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="widgets.css" />
+        <link rel="stylesheet" href="user.css" />
 
         <!-- JavaScript -->
         <script src="script.js"></script>
-
-        <!-- Klasse Router einbinden -->
         <script src="router.js"></script>
 
         <!-- Google Font "Playfair Display" -->
@@ -23,7 +23,7 @@
     <body>
         <!-- Header -->
         <header>
-            <div class="main-page-header">
+            <div id="main-page-header">
                 <a href="#/">Startseite</a>
             </div>
             <div>user24.de</div>
@@ -32,14 +32,14 @@
         <!-- Startseite -->
         <!-- ========== -->
         <main id="start-page" class="">
-            <div class="search-label">User finden</div>
+            <h1>User finden</h1>
             <div class="search-form">
                 <form method="get" title="leere Suche = alle User">
                     <input type="search" name="q" placeholder="Name, Ort, ...">
                     <button type="submit">🔍</button>
                 </form>
             </div>
-            <div class="search-information">
+            <div id="search-information">
                 Hier können Sie nach Usern suchen.<br>
                 Geben Sie dazu einfach ihre Informationen in die Suche ein.
             </div>
@@ -48,15 +48,21 @@
         <!-- Suchergebnisse -->
         <!-- =============== -->
         <main id="search-results" class="hidden">
-            <div id="userContainer" class=""></div>
+            <div class="search-form search-form-results">
+                <form method="get" title="leere Suche = alle User">
+                    <input type="search" name="q" placeholder="Name, Ort, ..." id="results-input">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+            <div id="user-container" class=""></div>
         </main>
         <!-- ========== -->
         <!-- Userdetail -->
         <!-- ========== -->
         <main id="user-detail" class="hidden">
-            <button href="#/">Zurück zur Startseite</button>
-            <div id="userDetail"></div>
-            <div class="posts-title">Posts dieses Users</div>
+            <button id="back-home">Zurück zur Startseite</button>
+            <div id="user-detail-container"></div>
+            <h1 id="posts-title">Posts dieses Users</h1>
             <div class="user-posts-container"></div>
         </main>
         <!-- Footer -->

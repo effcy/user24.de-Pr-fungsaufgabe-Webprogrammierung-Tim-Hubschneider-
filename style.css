@@ -1,20 +1,40 @@
+:root {
+    --text-color: black;
+    --background-color: white;
+    --border-color: lightgray;
+    --transparent-bg-gray: rgba(211, 211, 211, 0.2);
+    --font-family: 'Playfair Display', sans-serif;
+    --font-size-medium: clamp(20px, 2.5vw, 25px);
+    --font-size-small: clamp(15px, 2.5vw, 20px);
+}
+
+.hidden {
+    display: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; 
-    font-family: 'Playfair Display', sans-serif;
+    height: 100%;
+    font-family: var(--font-family);
 }
 
 body {
     display: flex; 
-    flex-direction: column; 
+    flex-direction: column;
+    max-width: 100%;
 }
 
 header, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: var(--background-color);
     padding: 1em;
 }
 
@@ -24,12 +44,12 @@ header {
     box-shadow: 0px 3px 5px -2px rgba(0,0,0, 0.2);
 }
 
-header a {
-    color: black;
+a {
+    color: var(--text-color);
     text-decoration: none;
 }
 
-header .main-page-header:hover {
+a:hover {
     font-weight: bold;
 }
 
@@ -38,94 +58,20 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: clamp(15px, 2.5vw, 22px);
+    font-size: var(--font-size-small);
     flex-direction: column;
 }
 
 main > div {
     padding: 0.5em 3em;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.search-label, .posts-title {
+h1 {
     font-size: 30px;
-}
-
-form input[type="search"] {
-    width: min(60vw, 500px);
-    height: 40px;
-    padding: 2px 10px 2px 10px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    background-color: white;
-    vertical-align: middle;
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 20px;
-}
-
-button {
-    height: 40px;
-    background-color: white;
-    border: 1px solid transparent;
-    border-radius: 5px;
-}
-
-button:hover {
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-}
-
-form button {
-    width: 40px;
-    font-size: large;
-    vertical-align: middle;
-}
-
-.hidden {
-    display: none;
-}
-
-#userContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-weight: normal;
     margin: 10px 0px;
-    border: 3px solid #cccccc;
-    border-radius: 20%;
-}
-
-.user img {
-    width: 200px;
-    height: 200px;
-    margin-right: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 20%;
-}
-
-.user span {
-    font-size: clamp(22px, 2.5vw, 30px);
-    margin: 5px 5px;
-}
-
-.user-posts-container {
-    flex-direction: column;
-}
-
-.postTitle {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.postBody {
-    margin-bottom: 5px;
-    text-align: justify;
 }
