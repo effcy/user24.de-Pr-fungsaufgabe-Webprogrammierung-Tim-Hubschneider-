@@ -297,3 +297,5 @@ showUserDetail = (userId, userDetailDiv, userPostsContainerDiv) => {
             console.log("Bei der Abfrage der Userdetailinfos ist etwas schiefgelaufen");
         });
 }
+
+//test
