@@ -33,6 +33,7 @@ window.addEventListener("load", () => {
      */
     const routes = [
         {
+            //Startseite
             url: "^/$",
             show: () => {
                 swapContent("start-page", "Startseite");
@@ -40,6 +41,7 @@ window.addEventListener("load", () => {
                 searchInformationDiv.innerHTML = "Hier können Sie nach Usern suchen.<br>Geben Sie dazu einfach ihre Informationen in die Suche ein.";
             }
         },{
+            //Suche fehlgeschlagen
             url: "^/search-failed/$",
             show: () => {
                 swapContent("start-page", "Startseite");
@@ -47,12 +49,14 @@ window.addEventListener("load", () => {
                 searchInformationDiv.innerHTML = "Es wurden leider keine passenden Ergebnisse gefunden ☹️.<br>Bitte erneut versuchen.";
             }
         },{
+            //Suchergebnis leere Suche: Alle User anzeigen
             url: "^/search/$",
             show: () => {
                 swapContent("search-results", "Suchergebnisse");
                 searchUsers("", userContainerDiv);
             }
          },{
+            //Suchergebnis mit Suchbegriff
             url: "^/search/(.+)$",
             show: (matches) => {
                 let query = matches[1];
@@ -60,6 +64,7 @@ window.addEventListener("load", () => {
                 searchUsers(query, userContainerDiv);
             }
         },{
+            //Userdetailseite anhand UserId
             url: "^/user/(\\d+)$",
             show: (matches) => {
                 let userId = matches[1];
@@ -78,6 +83,7 @@ window.addEventListener("load", () => {
 
     // Event-Listener für Header-Navigation auf Startseite
     homeNav.addEventListener("click", (event) => {
+        //Router lädt Startseite
         window.location.hash = '#/';
     });
 
@@ -85,6 +91,7 @@ window.addEventListener("load", () => {
     document.querySelectorAll('.search-form form').forEach(searchForm => {
         searchForm.addEventListener("submit", (event) => {
             const query = event.target.elements.q.value;
+            //if else, um leere Suche zu erlauben
             if (query === "") {
                 window.location.hash = "/search/";
             } else {
@@ -93,9 +100,9 @@ window.addEventListener("load", () => {
         });
     });
     
-
-    // Event-Listener für "Zurück zur Startseite"-Button
+    // Event-Listener für "Zurück zur Startseite"-Button auf Userdetailseite
     homeButton.addEventListener("click", () => {
+        //Router lädt Startseite
         window.location.hash = "#/";}
     )
 });
@@ -139,7 +146,7 @@ searchUsers = (query, userContainerDiv) => {
                     img.src = user.image;
                     userDiv.appendChild(img);
 
-                    //Span für Username in UserDiv
+                    //span für Username in UserDiv
                     const usernameSpan = document.createElement('span');
                     usernameSpan.textContent = user.username;
                     userDiv.appendChild(usernameSpan);

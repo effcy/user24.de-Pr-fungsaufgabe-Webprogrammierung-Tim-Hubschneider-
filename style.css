@@ -75,3 +75,13 @@ h1 {
     font-weight: normal;
     margin: 10px 0px;
 }
+
+@media print {
+    header {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+}
