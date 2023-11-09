@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
     /**------------------------------------------------------ 
-     * Globale DOM-Objekte 
+     * Hier benötigte DOM-Objekte 
      * ------------------------------------------------------*/
         const homeNav = document.querySelector('#main-page-header a');
         const userContainerDiv = document.getElementById('user-container');
