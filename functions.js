@@ -4,15 +4,18 @@
 
 // Funktion "fetchData" nimmt eine URL entgegen, sendet eine Anfrage an den entsprechender Server und wirft
 // entweder einen Error oder gibt den Inhalt als json zurück
-const fetchData = (url) => {
-    return fetch(url)
-      .then(response => {
+const fetchData = async (url) => {
+    try {
+        const response = await fetch(url);
         if (!response.ok) {
-          throw new Error(`Fehler beim fetchen von URL: ${url}`);
+            throw new Error();
         }
-        return response.json();
-    });
+        return await response.json();
+    } catch (error) {
+        console.error(`Fehler beim fetchen von URL: ${url}`, error);
+    }
 };
+
 
 // Funktion "fillUserContainerDiv" nimmt user und das entsprechende Div entgegen,
 // in welchem das Suchergebnis des Users dargestellt wird
