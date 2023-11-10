@@ -4,6 +4,7 @@
     --border-color: lightgray;
     --transparent-bg-gray: rgba(211, 211, 211, 0.2);
     --font-family: 'Playfair Display', sans-serif;
+    --font-size-large: clamp(30px, 5vw, 50px);
     --font-size-medium: clamp(20px, 2.5vw, 25px);
     --font-size-small: clamp(15px, 2.5vw, 20px);
 }
@@ -71,7 +72,7 @@ main > div {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: var(--font-size-large);
     font-weight: normal;
     margin: 10px 0px;
 }
