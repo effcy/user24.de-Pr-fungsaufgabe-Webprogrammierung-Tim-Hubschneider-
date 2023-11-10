@@ -151,6 +151,7 @@ const fillUserDetailDiv = (user, userDetailDiv) => {
     addFeature('last name', 'lastName', user, featuresDiv);
     addFeature('age', 'age', user, featuresDiv);
     addFeature('gender', 'gender', user, featuresDiv);
+    addFeature('birthdate', 'birthDate', user, featuresDiv);
 
     //imgDiv und featuresDiv an userDiv hängen
     userDiv.appendChild(imgDiv);
